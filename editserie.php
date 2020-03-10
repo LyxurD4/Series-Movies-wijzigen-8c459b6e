@@ -29,7 +29,7 @@ if (isset($_POST["id"])) {
     $languageWijzigenVar = $_POST["languageWijzigen"];
     $seasonWijzigenVar = $_POST["seasonWijzigen"];
     $descriptionWijzigenVar = $_POST["descriptionWijzigen"];
-    // echo $descriptionWijzigenVar;
+    
     //UPDATE
     $conn->query(
         "UPDATE series 
@@ -41,7 +41,8 @@ if (isset($_POST["id"])) {
         language = '$languageWijzigenVar',
         seasons = $seasonWijzigenVar,
         description = '$descriptionWijzigenVar'
-        WHERE id = $id");
+        WHERE id = $id"
+    );
 }
 
 header("Refresh: 0; url=series.php?id=$id");

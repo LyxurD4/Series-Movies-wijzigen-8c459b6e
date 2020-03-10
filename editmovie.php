@@ -28,8 +28,14 @@ if (isset($_POST["id"])) {
     $trailerWijzigenVar = $_POST["trailerWijzigen"];
 
     // UPDATE query 
-    $conn->query("UPDATE films SET titel = '$titelWijzigenVar', duur = $duurwijzigenVar, datum_van_uitkomst = '$datumVanUitkomstWijzigenVar', trailer = '$trailerWijzigenVar' WHERE id = $id") or die ("Error querying.");
-
+    $conn->query(
+        "UPDATE films 
+        SET titel = '$titelWijzigenVar', 
+        duur = $duurwijzigenVar, 
+        datum_van_uitkomst = '$datumVanUitkomstWijzigenVar', 
+        trailer = '$trailerWijzigenVar' 
+        WHERE id = $id"
+    );
 }
 
 header("Refresh: 2; url=films.php?id=$id");
